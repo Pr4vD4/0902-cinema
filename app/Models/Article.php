@@ -25,7 +25,7 @@ class Article extends Model
     protected static function boot()
     {
         parent::boot();
-        
+
         static::saving(function ($article) {
             if ($article->isDirty('content')) {
                 $words = str_word_count(strip_tags($article->content));

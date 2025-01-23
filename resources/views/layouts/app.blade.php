@@ -6,6 +6,7 @@
     <title>{{ config('app.name') }} - @yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    @livewireStyles
     @stack('styles')
 </head>
 <body class="flex flex-col min-h-screen">
@@ -16,6 +17,7 @@
     </main>
 
     @include('layouts.partials.footer')
+    @livewireScripts
     @stack('scripts')
 </body>
 </html>

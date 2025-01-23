@@ -57,4 +57,16 @@ class User extends Authenticatable
     {
         return $this->role === 'user';
     }
+
+    public function validateCredentials($credentials)
+    {
+        dd([
+            'checking_credentials' => true,
+            'provided' => $credentials,
+            'stored' => [
+                'login' => $this->login,
+                'password' => $this->password // Будет захешировано
+            ]
+        ]);
+    }
 }

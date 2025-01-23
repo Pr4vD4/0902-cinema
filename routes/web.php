@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 // Публичные маршруты
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
 // Маршруты аутентификации
 Route::middleware('guest')->group(function () {
